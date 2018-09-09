@@ -1,0 +1,31 @@
+(k)statusnotifieritem/appindicator support
+Activities configurator (turn off)
+Alternatetab
+Applications menu (off)
+Arc menu (off)
+Auto move windows
+Cpu power manager
+Coverflow alt-tab
+Dash to dock
+Dynamic panel transparency
+Easyscreencast (off temp)
+Freon (off temp)
+Gno-menu
+Hello,world! (off)
+Launch new instance (off)
+Manjaro linux updates indicator
+Native window placement
+Openweather
+Places stauts indicator
+Random wallpaper
+Removable drive menu
+Remove panel app menu
+Screenshot window sizer
+Simple net speed
+Taskbar
+Topicons
+User themes
+Window list (off)
+Workspace indicator (off)
+Windownavigator
+

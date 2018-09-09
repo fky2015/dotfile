@@ -1,0 +1,20 @@
+AdBlock 
+baiduexporter 1.0.2
+YAAW2 for Chrome 1.2.0
+Charset 0.4.2
+Checker Plus for Gmail
+Chrono 下载管理器
+crxMouse Chrome 手势
+Eye Dropper (Not turned on)
+GNOME Shell integration
+Google Search Keyboard Shortcuts
+ImTranslator
+Mercury Reader
+minerBlock
+OneTab
+ProxySwitchyOmega
+Stylus
+Tampermonkey
+Vimium
+保护眼睛
+
