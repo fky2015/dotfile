@@ -1,4 +1,4 @@
-binutils
+biuldutils
 vim
 git
 chromium
@@ -57,6 +57,6 @@ termtosvg
 taskbook
 screenkey
 pandoc
-trash
+trash-cli
 asciinema
 unicode-emoji
