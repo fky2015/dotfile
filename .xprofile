@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# execute by gdm
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+export XIM_PROGRAM=fcitx
+export XIM=fcitx
+
+export LANG=zh_CN.UTF-8
+# export LC_ALL="zh_CN.UTF-8"
+
+
+# 并未成功
+# xmodmap -e 'remove mod1 = Alt_R' # 解除原来绑定
+# xmodmap -e 'keycode 108 = Escape' # 作为 control 使用
