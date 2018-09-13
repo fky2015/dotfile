@@ -1,0 +1,50 @@
+Beautify
+C/C++
+Better TOML
+C/C++ Clang Command Adapter
+Chinese (Simplified) language Pack for Visual Studio Code
+Clang-Format
+Cobalt2 Theme Official
+Code Runner
+CodeLLDB
+Cython
+Debugger for java
+Docker
+filesize
+GitLens - Git supercharged
+Go
+Hopscotch (official)
+Insert Date String
+Java Extension Pack
+Java Test Runner
+JavaScript Standard Format
+Language Support for Java(TM) by Red Hat
+Language-Cython
+LLVM
+Markdown
+All in One
+Markdown Previwn Enhanced
+MarkDown Table Format
+markdownlint
+Material Icon Theme
+Material Syntax - Dark
+Maven for Java
+Native debug
+One Dark Theme
+PHP IntelliSense
+phpfmt - PHP formatter
+Python
+vscode-fileheader
+
+banned for now:
+C++ Intellisense
+Doxygen Documentation Generator
+ESLint
+Excel Viewer
+Palenight Theme
+Path Intellisense
+Rainbow CSV
+VS Live Share
+vscode-python-docstring
+Wrap Selection
+XML Tools
