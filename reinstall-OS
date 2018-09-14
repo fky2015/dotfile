@@ -2,16 +2,31 @@
 sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syyu
 sudo pacman -S vim git pacaur --needed
-sudo cat >> /etc/pacman.conf <<EOF
+
+# you may add the following using vim 
+cat >> /etc/pacman.conf <<EOF
 [archlinuxcn]
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 EOF
-pacaur -S archlinuxcn-keyring 
+# and uncomment the #Color option
+
+# setting clock in the system setting
 pacaur -Syy
+pacaur -S archlinuxcn-keyring 
 # you may update kernal and reboot before doing the next command
-pacaur -S --needed builduitils chromium fcitx-im wewechat deepin.com.qq.im.light awesome-terminal-fonts \
+pacaur -S --needed binutils make
+pacaur -S --needed chromium fcitx-im wewechat awesome-terminal-fonts \
     docker dry-bin lolcat powerpill visual-studio-code-bin vlc mtr tldr httpie \
     js-beautify cloc lldb gdb clang guake docker-compose neofetch powerline-fonts powerline \
-    zsh-autosuggestions zsh-fast-syntax-highlighting-git fortune proxychains-ng shadowsocks-qt5 \
-    vimix-gtk-themes-git fcitx-sogoupinyin fcitx-cloudpinyin fcitx-configtool iotop keepass tmux \
-    rlwrap go termtosvg taskbook screenkey pandoc trash-cli asciinema unicode-emoji
+    zsh-autosuggestions zsh-fast-syntax-highlighting-git proxychains-ng shadowsocks-qt5 \
+    fcitx-sogoupinyin fcitx-cloudpinyin fcitx-configtool iotop keepass tmux \
+    rlwrap go taskbook screenkey pandoc trash-cli asciinema unicode-emoji
+
+pacaur -S --needed fortune-mod fortune-mod-vimtips fortune-mod-zh termtosvg-git
+
+pacaur -S flameshot vimix-gtk-themes-git deepin.com.qq.office numix-circle-icon-theme-git gnome-terminal-fedora mlocate
+
+pacaur -S jdk8-openjdk python-pip
+
+# vim the /etc/proxychains.conf to socks5 1080
+#
