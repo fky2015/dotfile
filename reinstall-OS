@@ -1,0 +1,17 @@
+# using Ethernet
+sudo pacman-mirrors -i -c China -m rank
+sudo pacman -Syyu
+sudo pacman -S vim git pacaur --needed
+sudo cat >> /etc/pacman.conf <<EOF
+[archlinuxcn]
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+EOF
+pacaur -S archlinuxcn-keyring 
+pacaur -Syy
+# you may update kernal and reboot before doing the next command
+pacaur -S --needed builduitils chromium fcitx-im wewechat deepin.com.qq.im.light awesome-terminal-fonts \
+    docker dry-bin lolcat powerpill visual-studio-code-bin vlc mtr tldr httpie \
+    js-beautify cloc lldb gdb clang guake docker-compose neofetch powerline-fonts powerline \
+    zsh-autosuggestions zsh-fast-syntax-highlighting-git fortune proxychains-ng shadowsocks-qt5 \
+    vimix-gtk-themes-git fcitx-sogoupinyin fcitx-cloudpinyin fcitx-configtool iotop keepass tmux \
+    rlwrap go termtosvg taskbook screenkey pandoc trash-cli asciinema unicode-emoji
