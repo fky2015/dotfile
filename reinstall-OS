@@ -30,3 +30,11 @@ pacaur -S jdk8-openjdk python-pip
 
 # vim the /etc/proxychains.conf to socks5 1080
 #
+# if you mount /var to a particular disk, you may 
+# avoid failed umounting /var by vim /etc/systemd/journal.conf
+# from 
+# #Storage
+# to
+# Storage=volatile
+#
+# and may also run sudo journalctl --vacuum-time=2d
