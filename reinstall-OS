@@ -22,12 +22,15 @@ pacaur -S --needed chromium fcitx-im wewechat awesome-terminal-fonts \
     fcitx-sogoupinyin fcitx-cloudpinyin fcitx-configtool iotop keepass tmux \
     rlwrap go taskbook screenkey pandoc trash-cli asciinema unicode-emoji
 
-pacaur -S --needed fortune-mod fortune-mod-vimtips fortune-mod-zh termtosvg-git
+pacaur -S --needed fortune-mod fortune-mod-vimtips fortune-mod-zh termtosvg-git tlpui
 
 pacaur -S flameshot vimix-gtk-themes-git deepin.com.qq.office numix-circle-icon-theme-git gnome-terminal-fedora mlocate
 
-pacaur -S jdk8-openjdk python-pip
+pacaur -S jdk8-openjdk python-pip vim-youcompleteme-git openjdk8-src openjdk8-doc maven
 
+pacaur -S ipython jupyter
+
+pacaur -S tmux tmuxinator
 # vim the /etc/proxychains.conf to socks5 1080
 #
 # if you mount /var to a particular disk, you may 
@@ -38,3 +41,4 @@ pacaur -S jdk8-openjdk python-pip
 # Storage=volatile
 #
 # and may also run sudo journalctl --vacuum-time=2d
+

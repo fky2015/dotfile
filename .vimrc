@@ -34,7 +34,8 @@ filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
 set nu
-colorscheme solarized 
+colorscheme solarized
+set background=dark
 
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
@@ -46,7 +47,7 @@ set backspace   =2 " Make backspace work as you would expect.
 
 set hidden                 " Switch between buffers without having to save first.
 
-"set laststatus  =2         " Always show statusline. 
+"set laststatus  =2         " Always show statusline.
 "As I use Air Line, I disabled this --FKY
 
 "set display     =lastline  " Show as much as possible of the last line.
@@ -104,8 +105,8 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
@@ -173,3 +174,25 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 "inoremap ] <ESC>:call RemoveNextDoubleChar(']')<CR>a
 "inoremap } <ESC>:call RemoveNextDoubleChar('}')<CR>a
 "inoremap > <ESC>:call RemoveNextDoubleChar('>')<CR>a
+
+" make vim normally display in tmux
+if exists('$TMUX')
+    set term=xterm-256color
+endif
+
+" fix the cursor behaivor in tmux
+" Changing cursor shape per mode
+" 1 or 0 -> blinking block
+" 2 -> solid block
+" 3 -> blinking underscore
+" 4 -> solid underscore
+if exists('$TMUX')
+    " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
+    let &t_SI .= "\<Esc>Ptmux;\<Esc>\<Esc>[1 q\<Esc>\\"
+    let &t_EI .= "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+    autocmd VimLeave * silent !echo -ne "\033Ptmux;\033\033[0 q\033\\"
+else
+    let &t_SI .= "\<Esc>[1 q"
+    let &t_EI .= "\<Esc>[2 q"
+    autocmd VimLeave * silent !echo -ne "\033[0 q"
+endif

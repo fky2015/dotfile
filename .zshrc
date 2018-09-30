@@ -3,11 +3,11 @@
 
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
- export ZSH=/home/fky/.oh-my-zsh
-xmodmap ~/.xmodmap
+export ZSH=/home/fky/.oh-my-zsh
+xmodmap ~/.Xmodmap
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -56,7 +56,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git web-search docker-compose colorize gpg-agent battery sudo zsh-autosuggestions fast-syntax-highlighting colored-man-pages z extract docker-machine
+  git web-search docker-compose gpg-agent battery sudo zsh-autosuggestions fast-syntax-highlighting colored-man-pages z extract docker-machine colorize
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -93,12 +93,21 @@ source $ZSH/oh-my-zsh.sh
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
+LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
+
+autoload bashcompinit
+bashcompinit
+
+
 export PATH="/home/fky/.local/bin:$PATH"
 # export PATH="/opt/anaconda/bin:$PATH"
 # gopath
 export GOPATH="/home/fky/.go:/home/fky/code/go"
 #export GOROOT="/home/fky/.go"
 export PATH="$PATH:$GOPATH/bin"
+#export JAVA_HOME
+export JAVA_HOME="/usr/lib/jvm/default"
+export PATH="${PATH}:${JAVA_HOME}/bin"
 
 eval "$(pipenv --completion)"
 
@@ -116,6 +125,7 @@ alias vimrc='vim ~/.vimrc'
 alias ipad="ip addr | grep inet && hostname -i"
 alias cdp="cd ~/playground" # change to the playground
 alias p="pwd" # shorter
+alias tmux="tmux -2"
 
 autoload -U compinit && compinit
 
@@ -133,7 +143,9 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 # NEVER CHANGE IT UNLESS YOU NOW THE DANGER
 export XDG_CONFIG_HOME=${HOME}/.config
-export CLASSPATH="${HOME}/code/java"
+
+# seems like i don't have to declare it if not in a project 
+export CLASSPATH="${HOME}/code/java:."
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
