@@ -29,6 +29,12 @@ Plug 'terryma/vim-multiple-cursors'
 " surrounding 
 Plug 'tpope/vim-surround'
 
+" Hyperfocus-writing in Vim.
+Plug 'junegunn/limelight.vim'
+
+" Distraction-free writing in Vim
+Plug 'junegunn/goyo.vim'
+
 call plug#end()
 
 let g:airline_powerline_fonts = 1
