@@ -17,6 +17,18 @@ Plug 'scrooloose/nerdtree'
 " don't know yet
 Plug 'junegunn/vim-easy-align'
 
+" ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files, and acts as a Vim Language Server Protocol client.
+Plug 'w0rp/ale'
+
+" Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system (VCS).
+Plug 'mhinz/vim-signify'
+
+" as the name
+Plug 'terryma/vim-multiple-cursors'
+
+" surrounding 
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 let g:airline_powerline_fonts = 1
