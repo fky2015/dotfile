@@ -14,6 +14,8 @@ Plug 'Chiel92/vim-autoformat'
 " nerdtree
 Plug 'scrooloose/nerdtree'
 
+" don't know yet
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
