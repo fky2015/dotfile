@@ -1,7 +1,8 @@
 # using Ethernet
 sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syyu
-sudo pacman -S vim git pacaur --needed
+sudo pacman -S gvim git pacaur --needed
+# note that vim does not support "+ register
 
 # you may add the following using vim 
 cat >> /etc/pacman.conf <<EOF
