@@ -124,7 +124,9 @@ alias vimrc='vim ~/.vimrc'
 alias ipad="ip addr | grep inet && hostname -i"
 alias cdp="cd ~/playground" # change to the playground
 alias p="pwd" # shorter
-alias tmux="tmux -2"
+alias tmux="tmux -2" # fix the problem with vim
+alias y="yay"
+alias tmuxrc="vim ~/.tmux.conf"
 
 autoload -U compinit && compinit
 
