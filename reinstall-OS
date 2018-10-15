@@ -1,27 +1,57 @@
+####
+#
 # using Ethernet
+#
+####
+
 sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syyu
 sudo pacman -S gvim git pacaur --needed
+
+####
+#
 # note that vim does not support "+ register
+#
+####
 
 # you may add the following using vim 
 cat >> /etc/pacman.conf <<EOF
 [archlinuxcn]
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 EOF
-# and uncomment the #Color option
 
+####
+#
+# and uncomment the #Color option
+#
+####
+
+####
+#
 # setting clock in the system setting
+#
+####
+
 pacaur -Syy
 pacaur -S archlinuxcn-keyring 
+
+####
+#
 # you may update kernal and reboot before doing the next command
-pacaur -S --needed binutils make
+#
+####
+
+# basic utils #
+pacaur -S --needed binutils make yay
+
+
 pacaur -S --needed chromium fcitx-im wewechat awesome-terminal-fonts \
     docker dry-bin lolcat powerpill visual-studio-code-bin vlc mtr tldr httpie \
     js-beautify cloc lldb gdb clang guake docker-compose neofetch powerline-fonts powerline \
     zsh-autosuggestions zsh-fast-syntax-highlighting-git proxychains-ng shadowsocks-qt5 \
     fcitx-sogoupinyin fcitx-cloudpinyin fcitx-configtool iotop keepass tmux \
-    rlwrap go taskbook screenkey pandoc trash-cli asciinema unicode-emoji
+    rlwrap go taskbook screenkey pandoc trash-cli asciinema unicode-emoji \
+    telegram-desktop
 
 pacaur -S --needed fortune-mod fortune-mod-vimtips fortune-mod-zh termtosvg-git tlpui
 
@@ -32,6 +62,34 @@ pacaur -S jdk8-openjdk python-pip vim-youcompleteme-git openjdk8-src openjdk8-do
 pacaur -S ipython jupyter
 
 pacaur -S tmux tmuxinator
+
+# [start] faster edit tools #
+
+yay -S xclip xsel
+
+# [end] #
+
+# [start] advance utills
+
+yay -S dnsutils tree
+
+#
+
+# [start] security learning #
+
+####
+#
+# you have to add blackarch into your mirrorlist
+# or you can not do the following line
+#
+####
+
+yay -S burpsuite pwntools checksec python2-unicorn strace
+# [end] #
+
+
+# yay
+
 # vim the /etc/proxychains.conf to socks5 1080
 #
 # if you mount /var to a particular disk, you may 

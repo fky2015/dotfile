@@ -127,6 +127,9 @@ alias p="pwd" # shorter
 alias tmux="tmux -2" # fix the problem with vim
 alias y="yay"
 alias tmuxrc="vim ~/.tmux.conf"
+alias destory="/bin/rm"
+alias installrc="vim /home/fky/code/git/mine/dotfile/reinstall-OS"
+alias pwq='pwd | tr -d "\n" |xclip -selection c && pwd '
 
 autoload -U compinit && compinit
 
