@@ -87,6 +87,10 @@ yay -S dnsutils tree
 yay -S burpsuite pwntools checksec python2-unicorn strace
 # [end] #
 
+# for showing purpose
+
+
+# [end]
 
 # yay
 
