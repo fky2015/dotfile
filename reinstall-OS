@@ -87,6 +87,10 @@ yay -S dnsutils tree
 yay -S burpsuite pwntools checksec python2-unicorn strace
 # [end] #
 
+###### [start] latex ####
+yay -S texlive-most
+##### [end] latex ####
+
 # for showing purpose
 
 
