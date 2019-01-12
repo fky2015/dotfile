@@ -17,6 +17,10 @@ Plug 'scrooloose/nerdtree'
 " don't know yet
 Plug 'junegunn/vim-easy-align'
 
+" better commentary
+Plug 'scrooloose/nerdcommenter'
+" https://github.com/scrooloose/nerdcommenter
+
 " ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files, and acts as a Vim Language Server Protocol client.
 Plug 'w0rp/ale'
 
@@ -55,7 +59,7 @@ syntax on                  " Enable syntax highlighting.
 
 set nu
 colorscheme solarized
-set background=dark
+set background=light
 
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.

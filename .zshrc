@@ -97,6 +97,8 @@ LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
 autoload bashcompinit
 bashcompinit
 
+# for rust ./cargo/bin
+export PATH="${HOME}/.cargo/bin:$PATH"
 
 export PATH="/home/fky/.local/bin:$PATH"
 # export PATH="/opt/anaconda/bin:$PATH"
@@ -130,6 +132,10 @@ alias tmuxrc="vim ~/.tmux.conf"
 alias destory="/bin/rm"
 alias installrc="vim /home/fky/code/git/mine/dotfile/reinstall-OS"
 alias pwq='pwd | tr -d "\n" |xclip -selection c && pwd '
+alias asd='code .'
+alias cdt='cd /tmp'
+alias yaourt="yay"
+alias tb='taskbook'
 
 autoload -U compinit && compinit
 
@@ -150,6 +156,12 @@ export XDG_CONFIG_HOME=${HOME}/.config
 
 # seems like i don't have to declare it if not in a project 
 export CLASSPATH="${HOME}/code/java:."
+
+
+# rustup for rust
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

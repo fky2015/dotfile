@@ -9,3 +9,7 @@
 
 # load Key binding only at start
 xmodmap ~/.Xmodmap
+
+export LINGO_17_HOME="/home/fky/.local/bin"
+
+export PATH="/home/fky/.local/bin:$PATH"
