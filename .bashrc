@@ -157,3 +157,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export LINGO_17_HOME="/home/fky/.local/bin"
 
 export PATH="/home/fky/.local/bin:$PATH"
+
+# added by travis gem
+[ -f /home/fky/.travis/travis.sh ] && source /home/fky/.travis/travis.sh

@@ -125,6 +125,8 @@ alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias ipad="ip addr | grep inet && hostname -i"
 alias cdp="cd ~/playground" # change to the playground
+alias cdd="cd ~/Downloads" # change to the Downloads
+alias cdo="cd ~/Documents/onedrive"
 alias p="pwd" # shorter
 alias tmux="tmux -2" # fix the problem with vim
 alias y="yay"
@@ -136,6 +138,15 @@ alias asd='code .'
 alias cdt='cd /tmp'
 alias yaourt="yay"
 alias tb='taskbook'
+alias hex='hexyl'
+alias rl="rlwrap"
+alias paxel="pc4 -q axel -n 10"
+alias vps2="ssh -p '27955' 'root@138.128.217.218'"
+alias vps-ali="ssh fky@59.110.233.235"
+alias vps3="ssh fky@172.96.201.10 -p 31234"
+alias sml="rl sml"
+alias cpprunmain="g++ main.cpp -o /tmp/a.out && /tmp/a.out"
+alias cdc="cd ~/code"
 
 autoload -U compinit && compinit
 
@@ -160,7 +171,6 @@ export CLASSPATH="${HOME}/code/java:."
 
 # rustup for rust
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -169,3 +179,12 @@ export PATH="$PATH:/home/fky/.gem/ruby/2.5.0/bin"
 # 2018/8/2 for time testing
 #zprof
 
+source /usr/share/nvm/init-nvm.sh
+
+# for tilix terminal eluminator
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+# added by travis gem
+[ -f /home/fky/.travis/travis.sh ] && source /home/fky/.travis/travis.sh

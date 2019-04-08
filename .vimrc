@@ -1,3 +1,8 @@
+" map leader key
+
+" nnoremap <SPACE> <Nop>
+" let mapleader = "\<SPACE>"
+
 "" vim-plug
 call plug#begin('~/.vim/plugged')
 
@@ -21,9 +26,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdcommenter'
 " https://github.com/scrooloose/nerdcommenter
 
-" ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files, and acts as a Vim Language Server Protocol client.
-Plug 'w0rp/ale'
-
 " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system (VCS).
 Plug 'mhinz/vim-signify'
 
@@ -39,13 +41,47 @@ Plug 'junegunn/limelight.vim'
 " Distraction-free writing in Vim
 Plug 'junegunn/goyo.vim'
 
+" Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ } 
+
+" (Optional) Multi-entry selection UI.
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
+
+" vim-lsp
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'prabirshrestha/asyncomplete.vim'
+
+Plug 'jez/vim-better-sml'
+
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" let g:deoplete#enable_at_startup = 1
+
+Plug 'benmills/vimux'
+Plug 'w0rp/ale'
+
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
+
+" [end]
+
+
 
 let g:airline_powerline_fonts = 1
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " A (not so) minimal vimrc.
 "
@@ -59,7 +95,7 @@ syntax on                  " Enable syntax highlighting.
 
 set nu
 colorscheme solarized
-set background=light
+set background=dark
 
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
@@ -147,6 +183,20 @@ call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
+" mutiple cursor custom config
+
+" Default mapping
+" let g:multi_cursor_next_key='<C-m>'
+" let g:multi_cursor_prev_key='<C-p>'
+" let g:multi_cursor_skip_key='<C-x>'
+" let g:multi_cursor_quit_key='<Esc>'
+
+
+" [start] asyncomplete
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+" [end] asyncomplete
 
 
 "" auto completion of braket
@@ -199,6 +249,13 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 "inoremap } <ESC>:call RemoveNextDoubleChar('}')<CR>a
 "inoremap > <ESC>:call RemoveNextDoubleChar('>')<CR>a
 
+" [start] YCM
+" let g:ycm_global_ycm_extra_conf = '~/.config/vim/.ycm_extra_conf.py' 
+" let g:ycm_key_invoke_completion = '<c-space>'
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" [end] YCM
+
+
 " make vim normally display in tmux
 if exists('$TMUX')
     set term=xterm-256color
@@ -225,3 +282,34 @@ endif
 " use by junegunn/limelight , must need
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_guifg = 'DarkGray'
+
+
+" =================LSP====below=================
+" python-ls
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+" bash-ls
+
+if executable('bash-language-server')
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'bash-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+        \ 'whitelist': ['sh'],
+        \ })
+endif
+
+
+" deleting the setting of Vimux and vim-sml
+" you can added for some reason
+
+
+:imap jk <Esc>
+
+

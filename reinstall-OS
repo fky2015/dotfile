@@ -44,12 +44,15 @@ sudo pacman -S archlinuxcn-keyring
 # basic utils #
 sudo pacman -S --needed binutils make yay
 
+# h264 support
+pacman -Sy gst-libav
+
 
 yay -S --needed chromium fcitx-im wewechat awesome-terminal-fonts \
     docker dry-bin lolcat powerpill visual-studio-code-bin vlc mtr tldr httpie \
     js-beautify cloc lldb gdb clang guake docker-compose neofetch powerline-fonts powerline \
     zsh-autosuggestions zsh-fast-syntax-highlighting-git proxychains-ng shadowsocks-qt5 \
-    fcitx-sogoupinyin fcitx-cloudpinyin fcitx-configtool iotop keepass tmux \
+    fcitx-sogoupinyin fcitx-cloudpinyin fcitx-configtool iotop keepass \
     rlwrap go taskbook screenkey pandoc trash-cli asciinema unicode-emoji \
     telegram-desktop
 
@@ -65,11 +68,12 @@ pacaur -S tmux tmuxinator
 
 # [start] faster edit tools #
 
-yay -S xclip xsel
+yay -S xclip xsel hexly
 
 # [end] #
 
 yay -S adobe-source-han-sans-cn-fonts ttf-dejavu noto-fonts-emoji ttf-symbola --needed
+yay -S droid # vscode`
 # [start] java env #
 
 # tools
